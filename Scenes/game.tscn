@@ -1,0 +1,107 @@
+[gd_scene load_steps=13 format=3 uid="uid://dswetajpgflkq"]
+
+[ext_resource type="Texture2D" uid="uid://vd5k6l2kpdjj" path="res://Sprites/Space Background.png" id="1_t1mic"]
+[ext_resource type="Texture2D" uid="uid://dm85yxbibj3jj" path="res://Sprites/blue-paddle.png" id="1_w83f2"]
+[ext_resource type="Texture2D" uid="uid://daywoteml2012" path="res://Sprites/red-paddle.png" id="2_4p06u"]
+[ext_resource type="Script" path="res://Scripts/Paddle.gd" id="2_382uq"]
+[ext_resource type="Script" path="res://Scripts/SpaceMove.gd" id="2_alhi6"]
+[ext_resource type="Script" path="res://Scripts/Ceiling.gd" id="6_0gk3o"]
+[ext_resource type="Script" path="res://Scripts/Ball.gd" id="6_dujhh"]
+[ext_resource type="Texture2D" uid="uid://beoh1a3xwbtp6" path="res://Sprites/ball.png" id="6_jnawr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_paerg"]
+radius = 5.0
+height = 34.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmm0w"]
+size = Vector2(1152, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ot50r"]
+size = Vector2(74, 336)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0tpob"]
+radius = 11.0
+
+[node name="Game" type="Node2D"]
+
+[node name="SpaceBackground" type="Sprite2D" parent="."]
+position = Vector2(-4, -115)
+scale = Vector2(6.3, 6.3)
+texture = ExtResource("1_t1mic")
+script = ExtResource("2_alhi6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -1)
+
+[node name="Paddle" type="Node2D" parent="."]
+position = Vector2(-534, -99)
+scale = Vector2(3, 3)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Paddle"]
+script = ExtResource("2_382uq")
+UP = &"up"
+DOWN = &"down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle/CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_paerg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Paddle/CharacterBody2D"]
+texture = ExtResource("1_w83f2")
+
+[node name="Paddle2" type="Node2D" parent="."]
+position = Vector2(523, -99)
+scale = Vector2(3, 3)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Paddle2"]
+script = ExtResource("2_382uq")
+UP = &"up2"
+DOWN = &"down2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle2/CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_paerg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Paddle2/CharacterBody2D"]
+texture = ExtResource("2_4p06u")
+
+[node name="Ceiling" type="Area2D" parent="."]
+position = Vector2(0, -380)
+script = ExtResource("6_0gk3o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
+shape = SubResource("RectangleShape2D_qmm0w")
+
+[node name="Floor" type="Area2D" parent="."]
+position = Vector2(0, 372)
+script = ExtResource("6_0gk3o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("RectangleShape2D_qmm0w")
+
+[node name="Blue Zone" type="Area2D" parent="."]
+position = Vector2(-596, -198)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blue Zone"]
+position = Vector2(0, 36)
+shape = SubResource("RectangleShape2D_ot50r")
+
+[node name="Red Zone" type="Area2D" parent="."]
+position = Vector2(582, -198)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Red Zone"]
+position = Vector2(0, 36)
+shape = SubResource("RectangleShape2D_ot50r")
+
+[node name="Ball" type="CharacterBody2D" parent="."]
+position = Vector2(0, -91)
+script = ExtResource("6_dujhh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball"]
+position = Vector2(0, -69)
+texture = ExtResource("6_jnawr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+position = Vector2(2, -68.5)
+shape = SubResource("CircleShape2D_0tpob")
+
+[connection signal="body_entered" from="Ceiling" to="Ball" method="_on_ceiling_body_entered"]
+[connection signal="body_entered" from="Floor" to="Ball" method="_on_floor_body_entered"]

@@ -1,5 +1,14 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1694736671
+::res://::1694829464
 icon.svg::CompressedTexture2D::6744079609572109510::1694736530::1694736536::1::::<><>::
-::res://Scripts/::1694736574
-::res://Sprites/::1694736571
+README.md::TextFile::-1::1694737122::0::1::::<><>::
+::res://Scenes/::1694832602
+game.tscn::PackedScene::8468354359801458744::1694832602::0::1::::<><>::uid://vd5k6l2kpdjj::::res://Sprites/Space Background.png<>uid://dm85yxbibj3jj::::res://Sprites/blue-paddle.png<>uid://daywoteml2012::::res://Sprites/red-paddle.png<>res://Scripts/Paddle.gd<>res://Scripts/SpaceMove.gd
+::res://Scripts/::1694831924
+Paddle.gd::GDScript::-1::1694829397::0::1::::<>CharacterBody2D<>::
+SpaceMove.gd::GDScript::-1::1694831924::0::1::::<>Sprite2D<>::
+::res://Sprites/::1694832774
+ball.png::CompressedTexture2D::2696548840721959601::1694832774::1694832776::1::::<><>::
+blue-paddle.png::CompressedTexture2D::8071518219403439683::1694739070::1694740347::1::::<><>::
+red-paddle.png::CompressedTexture2D::7210168896816154747::1694737177::1694737200::1::::<><>::
+Space Background.png::CompressedTexture2D::1481999863840318463::1694829738::1694829742::1::::<><>::
