@@ -1,5 +1,3 @@
 res://Scenes/game.tscn
 res://Scripts/Paddle.gd
-res://Scripts/SpaceMove.gd
 res://Scripts/Ball.gd
-res://Scripts/Ceiling.gd

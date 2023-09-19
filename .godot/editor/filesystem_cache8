@@ -1,13 +1,15 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1694829464
+::res://::1695096349
 icon.svg::CompressedTexture2D::6744079609572109510::1694736530::1694736536::1::::<><>::
 README.md::TextFile::-1::1694737122::0::1::::<><>::
-::res://Scenes/::1694832602
-game.tscn::PackedScene::8468354359801458744::1694832602::0::1::::<><>::uid://vd5k6l2kpdjj::::res://Sprites/Space Background.png<>uid://dm85yxbibj3jj::::res://Sprites/blue-paddle.png<>uid://daywoteml2012::::res://Sprites/red-paddle.png<>res://Scripts/Paddle.gd<>res://Scripts/SpaceMove.gd
-::res://Scripts/::1694831924
-Paddle.gd::GDScript::-1::1694829397::0::1::::<>CharacterBody2D<>::
-SpaceMove.gd::GDScript::-1::1694831924::0::1::::<>Sprite2D<>::
-::res://Sprites/::1694832774
+::res://Scenes/::1694847648
+game.tscn::PackedScene::8468354359801458744::1694847648::0::1::::<><>::uid://vd5k6l2kpdjj::::res://Sprites/Space Background.png<>uid://dm85yxbibj3jj::::res://Sprites/blue-paddle.png<>uid://daywoteml2012::::res://Sprites/red-paddle.png<>res://Scripts/Paddle.gd<>res://Scripts/SpaceMove.gd<>res://Scripts/Ceiling.gd<>res://Scripts/Ball.gd<>uid://beoh1a3xwbtp6::::res://Sprites/ball.png
+::res://Scripts/::1694847646
+Ball.gd::GDScript::-1::1694847646::0::1::::<>CharacterBody2D<>::
+Ceiling.gd::GDScript::-1::1694837232::0::1::::<>Area2D<>::
+Paddle.gd::GDScript::-1::1694847101::0::1::::<>CharacterBody2D<>::
+SpaceMove.gd::GDScript::-1::1694842824::0::1::::<>Sprite2D<>::
+::res://Sprites/::1694832776
 ball.png::CompressedTexture2D::2696548840721959601::1694832774::1694832776::1::::<><>::
 blue-paddle.png::CompressedTexture2D::8071518219403439683::1694739070::1694740347::1::::<><>::
 red-paddle.png::CompressedTexture2D::7210168896816154747::1694737177::1694737200::1::::<><>::

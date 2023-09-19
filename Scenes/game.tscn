@@ -17,7 +17,7 @@ height = 34.0
 size = Vector2(1152, 110)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ot50r"]
-size = Vector2(74, 336)
+size = Vector2(74, 1031.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0tpob"]
 radius = 11.0
@@ -33,34 +33,35 @@ script = ExtResource("2_alhi6")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -1)
 
-[node name="Paddle" type="Node2D" parent="."]
+[node name="Paddle" type="CharacterBody2D" parent="."]
 position = Vector2(-534, -99)
 scale = Vector2(3, 3)
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Paddle"]
 script = ExtResource("2_382uq")
 UP = &"up"
 DOWN = &"down"
+MAX_HEIGHT = -275
+MIN_HEIGHT = 269
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle/CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle"]
 shape = SubResource("CapsuleShape2D_paerg")
 
-[node name="Sprite2D" type="Sprite2D" parent="Paddle/CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Paddle"]
 texture = ExtResource("1_w83f2")
 
-[node name="Paddle2" type="Node2D" parent="."]
+[node name="Paddle2" type="CharacterBody2D" parent="."]
 position = Vector2(523, -99)
 scale = Vector2(3, 3)
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Paddle2"]
 script = ExtResource("2_382uq")
 UP = &"up2"
 DOWN = &"down2"
+MAX_HEIGHT = -275
+MIN_HEIGHT = 269
+BOUNCE_DIRECTION = -1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle2/CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle2"]
 shape = SubResource("CapsuleShape2D_paerg")
 
-[node name="Sprite2D" type="Sprite2D" parent="Paddle2/CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Paddle2"]
 texture = ExtResource("2_4p06u")
 
 [node name="Ceiling" type="Area2D" parent="."]
@@ -69,6 +70,7 @@ script = ExtResource("6_0gk3o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
 shape = SubResource("RectangleShape2D_qmm0w")
+debug_color = Color(0.968627, 0, 0.462745, 0.419608)
 
 [node name="Floor" type="Area2D" parent="."]
 position = Vector2(0, 372)
@@ -76,32 +78,34 @@ script = ExtResource("6_0gk3o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 shape = SubResource("RectangleShape2D_qmm0w")
+debug_color = Color(0.968627, 0, 0.478431, 0.419608)
 
 [node name="Blue Zone" type="Area2D" parent="."]
 position = Vector2(-596, -198)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Blue Zone"]
-position = Vector2(0, 36)
+position = Vector2(0, 190.5)
 shape = SubResource("RectangleShape2D_ot50r")
+debug_color = Color(0.980392, 0, 0.388235, 0.596078)
 
 [node name="Red Zone" type="Area2D" parent="."]
 position = Vector2(582, -198)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Red Zone"]
-position = Vector2(0, 36)
+position = Vector2(0, 229.25)
 shape = SubResource("RectangleShape2D_ot50r")
+debug_color = Color(0.952941, 0, 0.552941, 0.419608)
 
 [node name="Ball" type="CharacterBody2D" parent="."]
-position = Vector2(0, -91)
 script = ExtResource("6_dujhh")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ball"]
-position = Vector2(0, -69)
 texture = ExtResource("6_jnawr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
-position = Vector2(2, -68.5)
 shape = SubResource("CircleShape2D_0tpob")
 
 [connection signal="body_entered" from="Ceiling" to="Ball" method="_on_ceiling_body_entered"]
 [connection signal="body_entered" from="Floor" to="Ball" method="_on_floor_body_entered"]
+[connection signal="body_entered" from="Blue Zone" to="Ball" method="_on_blue_zone_body_entered"]
+[connection signal="body_entered" from="Red Zone" to="Ball" method="_on_red_zone_body_entered"]
