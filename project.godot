@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="Pong"
+config/description="The classic pong game made in Godot."
 run/main_scene="res://Scenes/UI/Main Menu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
-config/icon="res://icon.svg"
+boot_splash/image="res://Images/splash.png"
+boot_splash/minimum_display_time=3000
 
 [autoload]
 
@@ -21,6 +23,7 @@ Globals="*res://Globals/globals.gd"
 
 [display]
 
+window/size/resizable=false
 window/size/always_on_top.editor=true
 
 [input]

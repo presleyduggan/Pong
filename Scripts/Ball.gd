@@ -66,17 +66,18 @@ func reset():
 		y_direction = directions[rng.randi_range(0, 1)]
 
 
-func _on_red_zone_body_entered():
+func updateBlueScore():
 	# give blue player a point
 	#print('in blue area!');
 	Globals.blue_score += 1
 	$"../UI".update_blue_score();
 	reset()
-
-
-func _on_blue_zone_body_entered():
+	
+func updateRedScore():
 	# give red player a point
 	#print('in red area!');
 	Globals.red_score += 1
 	$"../UI".update_red_score();
 	reset()
+
+

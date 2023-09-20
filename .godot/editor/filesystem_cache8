@@ -1,23 +1,26 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1695193710
+::res://::1695219049
+export_presets.cfg::TextFile::-1::1695196798::0::1::::<><>::
 icon.svg::CompressedTexture2D::6744079609572109510::1694736530::1694736536::1::::<><>::
 README.md::TextFile::-1::1694737122::0::1::::<><>::
-::res://Globals/::1695193528
-globals.gd::GDScript::-1::1695193528::0::1::::<>Node<>::
-::res://Images/::1695191021
+::res://Globals/::1695219566
+globals.gd::GDScript::-1::1695219566::0::1::::<>Node<>::
+::res://Images/::1695220019
 67745401855__A5FAF89C-6ABF-4D6D-A0EA-6537B2B23853.jpg::CompressedTexture2D::6982762256657661133::1695189976::1695190119::1::::<><>::
 IMG_8432.jpg::CompressedTexture2D::4199756115195630542::1695190869::1695191021::1::::<><>::
-::res://Scenes/::1695193701
-game.tscn::PackedScene::8468354359801458744::1695193701::0::1::::<><>::res://Scripts/level.gd<>uid://vd5k6l2kpdjj::::res://Sprites/Space Background.png<>uid://dm85yxbibj3jj::::res://Sprites/blue-paddle.png<>uid://daywoteml2012::::res://Sprites/red-paddle.png<>res://Scripts/Paddle.gd<>res://Scripts/SpaceMove.gd<>res://Scripts/Ceiling.gd<>res://Scripts/Ball.gd<>uid://dk1868iuepux2::::res://Scenes/UI/UI.tscn
-::res://Scenes/UI/::1695193701
-Main Menu.tscn::PackedScene::6726480405131124547::1695193701::0::1::::<><>::res://Scripts/Main Menu.gd
-UI.tscn::PackedScene::7916885075981183665::1695193701::0::1::::<><>::res://Scripts/UI.gd
-::res://Scripts/::1695193616
-Ball.gd::GDScript::-1::1695193616::0::1::::<>CharacterBody2D<>::
+splash.png::CompressedTexture2D::2924610306673780223::1695220019::1695220026::1::::<><>::
+your-logo-here-dark.png::CompressedTexture2D::697998227111248959::1695219743::1695220026::1::::<><>::
+::res://Scenes/::1695219577
+game.tscn::PackedScene::8468354359801458744::1695219577::0::1::::<><>::res://Scripts/level.gd<>uid://vd5k6l2kpdjj::::res://Sprites/Space Background.png<>uid://dm85yxbibj3jj::::res://Sprites/blue-paddle.png<>uid://daywoteml2012::::res://Sprites/red-paddle.png<>res://Scripts/Paddle.gd<>res://Scripts/SpaceMove.gd<>res://Scripts/Ceiling.gd<>res://Scripts/Ball.gd<>uid://dk1868iuepux2::::res://Scenes/UI/UI.tscn
+::res://Scenes/UI/::1695219577
+Main Menu.tscn::PackedScene::6726480405131124547::1695219577::0::1::::<><>::res://Scripts/Main Menu.gd<>uid://beoh1a3xwbtp6::::res://Sprites/ball.png<>uid://4kme62gb1hw2::::res://Sprites/Koda2.png<>uid://bvpgfue38e0iw::::res://Sprites/Yoshi.png<>uid://xg5mck4icvy4::::res://Sprites/Shadow.png
+UI.tscn::PackedScene::7916885075981183665::1695219577::0::1::::<><>::res://Scripts/UI.gd
+::res://Scripts/::1695219530
+Ball.gd::GDScript::-1::1695219251::0::1::::<>CharacterBody2D<>::
 Ceiling.gd::GDScript::-1::1694837232::0::1::::<>Area2D<>::
-level.gd::GDScript::-1::1695193006::0::1::::<>Node2D<>::
-Main Menu.gd::GDScript::-1::1695189612::0::1::::<>Node2D<>::
-Paddle.gd::GDScript::-1::1695177370::0::1::::<>CharacterBody2D<>::
+level.gd::GDScript::-1::1695219216::0::1::::<>Node2D<>::
+Main Menu.gd::GDScript::-1::1695219530::0::1::::<>Node2D<>::
+Paddle.gd::GDScript::-1::1695219051::0::1::::<>CharacterBody2D<>::
 SpaceMove.gd::GDScript::-1::1695172630::0::1::::<>Sprite2D<>::
 UI.gd::GDScript::-1::1695179167::0::1::::<>CanvasLayer<>::
 ::res://Sprites/::1695191018

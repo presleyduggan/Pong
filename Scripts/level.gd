@@ -38,3 +38,11 @@ func _on_floor_body_entered(body):
 func _on_ceiling_body_entered(body):
 	if(body.name == Globals.gameBall):
 		get_node(Globals.gameBall).swapDirection()
+
+
+func _on_red_zone_body_entered(body):
+	get_node(Globals.gameBall).updateBlueScore()
+
+
+func _on_blue_zone_body_entered(body):
+	get_node(Globals.gameBall).updateRedScore()

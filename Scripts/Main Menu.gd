@@ -1,6 +1,7 @@
 extends Node2D
 
-
+func _ready():
+	$CanvasLayer/ColorRect/Menu/Popup/ColorRect/HBoxContainer/VBoxContainer/MarginContainer/BallChooser.selected = Globals.getBallIndex()
 
 func _on_play_pressed():
 	Globals.goto_scene(Globals.gameLevel)

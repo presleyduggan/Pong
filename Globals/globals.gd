@@ -43,3 +43,9 @@ func _deferred_goto_scene(path):
 	
 func changeGameBall(index):
 	gameBall = balls[index]
+	
+func getBallIndex():
+	for i in range(0, len(balls)):
+		if balls[i] == gameBall:
+			return i
+	return -1
