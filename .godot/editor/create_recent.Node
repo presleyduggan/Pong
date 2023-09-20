@@ -1,3 +1,13 @@
+Label
+MarginContainer
+VBoxContainer
+Button
+OptionButton
+HBoxContainer
+ColorRect
+CanvasLayer
+Control
+Container
 CollisionShape2D
 Sprite2D
 CharacterBody2D

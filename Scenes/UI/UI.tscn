@@ -1,0 +1,85 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk1868iuepux2"]
+
+[ext_resource type="Script" path="res://Scripts/UI.gd" id="1_prxyg"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_prxyg")
+
+[node name="Blue Score" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.005
+anchor_right = 0.021
+
+[node name="Label" type="Label" parent="Blue Score"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 20
+text = "Score: 0"
+
+[node name="Red Score" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.95
+anchor_right = 0.95
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="Red Score"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 20
+text = "Score: 0"
+
+[node name="Game Over" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Game Over"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.5
+offset_top = -30.5
+offset_right = 89.5
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Game Over/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Game Over!"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Game Over/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Play Again" type="Button" parent="Game Over/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Play Again"
+
+[node name="Quit Game" type="Button" parent="Game Over/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "End Game"
+
+[connection signal="pressed" from="Game Over/VBoxContainer/HBoxContainer/Play Again" to="." method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="Game Over/VBoxContainer/HBoxContainer/Quit Game" to="." method="_on_quit_game_pressed"]

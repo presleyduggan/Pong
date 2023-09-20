@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="Pong"
-run/main_scene="res://Scenes/game.tscn"
+run/main_scene="res://Scenes/UI/Main Menu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://Globals/globals.gd"
+
+[display]
+
+window/size/always_on_top.editor=true
 
 [input]
 

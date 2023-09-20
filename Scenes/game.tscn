@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://dswetajpgflkq"]
+[gd_scene load_steps=21 format=3 uid="uid://dswetajpgflkq"]
 
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_bvt6k"]
 [ext_resource type="Texture2D" uid="uid://vd5k6l2kpdjj" path="res://Sprites/Space Background.png" id="1_t1mic"]
 [ext_resource type="Texture2D" uid="uid://dm85yxbibj3jj" path="res://Sprites/blue-paddle.png" id="1_w83f2"]
 [ext_resource type="Texture2D" uid="uid://daywoteml2012" path="res://Sprites/red-paddle.png" id="2_4p06u"]
@@ -7,7 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/SpaceMove.gd" id="2_alhi6"]
 [ext_resource type="Script" path="res://Scripts/Ceiling.gd" id="6_0gk3o"]
 [ext_resource type="Script" path="res://Scripts/Ball.gd" id="6_dujhh"]
-[ext_resource type="Texture2D" uid="uid://beoh1a3xwbtp6" path="res://Sprites/ball.png" id="6_jnawr"]
+[ext_resource type="PackedScene" uid="uid://dk1868iuepux2" path="res://Scenes/UI/UI.tscn" id="9_xt0fk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_paerg"]
 radius = 5.0
@@ -17,12 +18,34 @@ height = 34.0
 size = Vector2(1152, 110)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ot50r"]
-size = Vector2(74, 1031.5)
+size = Vector2(56, 1031.5)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0tpob"]
-radius = 11.0
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tpao4"]
+load_path = "res://.godot/imported/ball.png-ced949aa27aa6415675b42ae2cf4b2b4.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fqqn0"]
+radius = 12.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dklew"]
+load_path = "res://.godot/imported/Koda2.png-bb6f4b42a6cf93d160018efda9277c4e.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_26fuo"]
+radius = 24.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u0jit"]
+load_path = "res://.godot/imported/Yoshi.png-503b761e71202ce67415d82525c3dfa9.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cdw8m"]
+radius = 26.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_no846"]
+load_path = "res://.godot/imported/Shadow.png-a7ccf17a29ec0fca81d1d01bfc54435a.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4xtob"]
+radius = 33.1361
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_bvt6k")
 
 [node name="SpaceBackground" type="Sprite2D" parent="."]
 position = Vector2(-4, -115)
@@ -92,7 +115,7 @@ debug_color = Color(0.980392, 0, 0.388235, 0.596078)
 position = Vector2(582, -198)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Red Zone"]
-position = Vector2(0, 229.25)
+position = Vector2(9, 229.25)
 shape = SubResource("RectangleShape2D_ot50r")
 debug_color = Color(0.952941, 0, 0.552941, 0.419608)
 
@@ -100,12 +123,46 @@ debug_color = Color(0.952941, 0, 0.552941, 0.419608)
 script = ExtResource("6_dujhh")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ball"]
-texture = ExtResource("6_jnawr")
+texture = SubResource("CompressedTexture2D_tpao4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
-shape = SubResource("CircleShape2D_0tpob")
+shape = SubResource("CircleShape2D_fqqn0")
 
-[connection signal="body_entered" from="Ceiling" to="Ball" method="_on_ceiling_body_entered"]
-[connection signal="body_entered" from="Floor" to="Ball" method="_on_floor_body_entered"]
+[node name="Koda" type="CharacterBody2D" parent="."]
+script = ExtResource("6_dujhh")
+
+[node name="KodaSprite" type="Sprite2D" parent="Koda"]
+texture = SubResource("CompressedTexture2D_dklew")
+
+[node name="KodaCollider" type="CollisionShape2D" parent="Koda"]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_26fuo")
+
+[node name="Yoshi" type="CharacterBody2D" parent="."]
+script = ExtResource("6_dujhh")
+
+[node name="YoshiSprite" type="Sprite2D" parent="Yoshi"]
+texture = SubResource("CompressedTexture2D_u0jit")
+
+[node name="YoshiCollider" type="CollisionShape2D" parent="Yoshi"]
+position = Vector2(-2, 0)
+shape = SubResource("CircleShape2D_cdw8m")
+
+[node name="Shadow" type="CharacterBody2D" parent="."]
+script = ExtResource("6_dujhh")
+
+[node name="ShadowSprite" type="Sprite2D" parent="Shadow"]
+texture = SubResource("CompressedTexture2D_no846")
+
+[node name="ShadowCollider" type="CollisionShape2D" parent="Shadow"]
+position = Vector2(1, -3)
+shape = SubResource("CircleShape2D_4xtob")
+
+[node name="UI" parent="." instance=ExtResource("9_xt0fk")]
+
+[connection signal="body_entered" from="Ceiling" to="." method="_on_ceiling_body_entered"]
+[connection signal="body_entered" from="Floor" to="." method="_on_floor_body_entered"]
 [connection signal="body_entered" from="Blue Zone" to="Ball" method="_on_blue_zone_body_entered"]
 [connection signal="body_entered" from="Red Zone" to="Ball" method="_on_red_zone_body_entered"]
+[connection signal="play_again_pressed" from="UI" to="." method="_on_ui_play_again_pressed"]
+[connection signal="quit_pressed" from="UI" to="." method="_on_ui_quit_pressed"]

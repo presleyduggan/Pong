@@ -1,16 +1,31 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1695096349
+::res://::1695193710
 icon.svg::CompressedTexture2D::6744079609572109510::1694736530::1694736536::1::::<><>::
 README.md::TextFile::-1::1694737122::0::1::::<><>::
-::res://Scenes/::1694847648
-game.tscn::PackedScene::8468354359801458744::1694847648::0::1::::<><>::uid://vd5k6l2kpdjj::::res://Sprites/Space Background.png<>uid://dm85yxbibj3jj::::res://Sprites/blue-paddle.png<>uid://daywoteml2012::::res://Sprites/red-paddle.png<>res://Scripts/Paddle.gd<>res://Scripts/SpaceMove.gd<>res://Scripts/Ceiling.gd<>res://Scripts/Ball.gd<>uid://beoh1a3xwbtp6::::res://Sprites/ball.png
-::res://Scripts/::1694847646
-Ball.gd::GDScript::-1::1694847646::0::1::::<>CharacterBody2D<>::
+::res://Globals/::1695193528
+globals.gd::GDScript::-1::1695193528::0::1::::<>Node<>::
+::res://Images/::1695191021
+67745401855__A5FAF89C-6ABF-4D6D-A0EA-6537B2B23853.jpg::CompressedTexture2D::6982762256657661133::1695189976::1695190119::1::::<><>::
+IMG_8432.jpg::CompressedTexture2D::4199756115195630542::1695190869::1695191021::1::::<><>::
+::res://Scenes/::1695193701
+game.tscn::PackedScene::8468354359801458744::1695193701::0::1::::<><>::res://Scripts/level.gd<>uid://vd5k6l2kpdjj::::res://Sprites/Space Background.png<>uid://dm85yxbibj3jj::::res://Sprites/blue-paddle.png<>uid://daywoteml2012::::res://Sprites/red-paddle.png<>res://Scripts/Paddle.gd<>res://Scripts/SpaceMove.gd<>res://Scripts/Ceiling.gd<>res://Scripts/Ball.gd<>uid://dk1868iuepux2::::res://Scenes/UI/UI.tscn
+::res://Scenes/UI/::1695193701
+Main Menu.tscn::PackedScene::6726480405131124547::1695193701::0::1::::<><>::res://Scripts/Main Menu.gd
+UI.tscn::PackedScene::7916885075981183665::1695193701::0::1::::<><>::res://Scripts/UI.gd
+::res://Scripts/::1695193616
+Ball.gd::GDScript::-1::1695193616::0::1::::<>CharacterBody2D<>::
 Ceiling.gd::GDScript::-1::1694837232::0::1::::<>Area2D<>::
-Paddle.gd::GDScript::-1::1694847101::0::1::::<>CharacterBody2D<>::
-SpaceMove.gd::GDScript::-1::1694842824::0::1::::<>Sprite2D<>::
-::res://Sprites/::1694832776
+level.gd::GDScript::-1::1695193006::0::1::::<>Node2D<>::
+Main Menu.gd::GDScript::-1::1695189612::0::1::::<>Node2D<>::
+Paddle.gd::GDScript::-1::1695177370::0::1::::<>CharacterBody2D<>::
+SpaceMove.gd::GDScript::-1::1695172630::0::1::::<>Sprite2D<>::
+UI.gd::GDScript::-1::1695179167::0::1::::<>CanvasLayer<>::
+::res://Sprites/::1695191018
 ball.png::CompressedTexture2D::2696548840721959601::1694832774::1694832776::1::::<><>::
 blue-paddle.png::CompressedTexture2D::8071518219403439683::1694739070::1694740347::1::::<><>::
-red-paddle.png::CompressedTexture2D::7210168896816154747::1694737177::1694737200::1::::<><>::
+Koda2.png::CompressedTexture2D::2056857660340907395::1695190399::1695190400::1::::<><>::
+Koda.png::CompressedTexture2D::5400282570190955924::1695190116::1695190119::1::::<><>::
+red-paddle.png::CompressedTexture2D::7210168896816154747::1694737177::1695107935::1::::<><>::
+Shadow.png::CompressedTexture2D::1628572731332122321::1695191017::1695191018::1::::<><>::
 Space Background.png::CompressedTexture2D::1481999863840318463::1694829738::1694829742::1::::<><>::
+Yoshi.png::CompressedTexture2D::3891726355291498938::1695190709::1695190711::1::::<><>::

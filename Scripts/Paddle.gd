@@ -7,10 +7,17 @@ var x_speed = 0;
 @export var MAX_HEIGHT: int;
 @export var MIN_HEIGHT: int;
 @export var BOUNCE_DIRECTION = 1;
+var start_x: int;
+
+func _ready():
+	start_x = position.x
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	
+	if(position.x != start_x):
+		position.x = start_x
 	
 	var y_direction = Input.get_action_strength(DOWN) - Input.get_action_strength(UP)
 	

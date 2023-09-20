@@ -1,0 +1,174 @@
+[gd_scene load_steps=6 format=3 uid="uid://c23mfc314i84v"]
+
+[ext_resource type="Script" path="res://Scripts/Main Menu.gd" id="1_csp6t"]
+[ext_resource type="Texture2D" uid="uid://beoh1a3xwbtp6" path="res://Sprites/ball.png" id="2_2icqq"]
+[ext_resource type="Texture2D" uid="uid://4kme62gb1hw2" path="res://Sprites/Koda2.png" id="3_0xpmf"]
+[ext_resource type="Texture2D" uid="uid://bvpgfue38e0iw" path="res://Sprites/Yoshi.png" id="4_n16r3"]
+[ext_resource type="Texture2D" uid="uid://xg5mck4icvy4" path="res://Sprites/Shadow.png" id="5_lfjog"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_csp6t")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.999318, 1)
+color = Color(0.113725, 0.133333, 0.305882, 1)
+
+[node name="Menu" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ColorRect/Menu"]
+layout_mode = 2
+theme_override_constants/margin_top = 60
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect/Menu/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 90
+text = "Pong"
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="CanvasLayer/ColorRect/Menu"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/ColorRect/Menu/Buttons"]
+layout_mode = 2
+size_flags_stretch_ratio = 3.22
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 300
+
+[node name="Play" type="Button" parent="CanvasLayer/ColorRect/Menu/Buttons/MarginContainer2"]
+layout_mode = 2
+text = "Play Game"
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/ColorRect/Menu/Buttons"]
+layout_mode = 2
+size_flags_stretch_ratio = 3.22
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
+
+[node name="Settings" type="Button" parent="CanvasLayer/ColorRect/Menu/Buttons/MarginContainer3"]
+layout_mode = 2
+text = "Settings"
+
+[node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/ColorRect/Menu/Buttons"]
+layout_mode = 2
+size_flags_stretch_ratio = 3.22
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
+
+[node name="Quit" type="Button" parent="CanvasLayer/ColorRect/Menu/Buttons/MarginContainer4"]
+layout_mode = 2
+text = "Quit
+"
+
+[node name="MarginContainer5" type="MarginContainer" parent="CanvasLayer/ColorRect/Menu/Buttons"]
+layout_mode = 2
+size_flags_stretch_ratio = 3.22
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = -20
+theme_override_constants/margin_right = 50
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect/Menu/Buttons/MarginContainer5"]
+layout_mode = 2
+text = "by presleyduggan"
+horizontal_alignment = 1
+
+[node name="Popup" type="MarginContainer" parent="CanvasLayer/ColorRect/Menu"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/ColorRect/Menu/Popup"]
+custom_minimum_size = Vector2(400, 340)
+layout_mode = 2
+color = Color(0.423529, 0.423529, 0.423529, 0.94902)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ColorRect/Menu/Popup/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect/Menu/Popup/ColorRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/ColorRect/Menu/Popup/ColorRect/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect/Menu/Popup/ColorRect/HBoxContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+text = "Game Ball"
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ColorRect/Menu/Popup/ColorRect/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 50
+
+[node name="BallChooser" type="OptionButton" parent="CanvasLayer/ColorRect/Menu/Popup/ColorRect/HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+item_count = 4
+selected = 0
+popup/item_0/text = "Ball"
+popup/item_0/icon = ExtResource("2_2icqq")
+popup/item_0/id = 0
+popup/item_1/text = "Koda"
+popup/item_1/icon = ExtResource("3_0xpmf")
+popup/item_1/id = 1
+popup/item_2/text = "Yoshi"
+popup/item_2/icon = ExtResource("4_n16r3")
+popup/item_2/id = 2
+popup/item_3/text = "Shadow"
+popup/item_3/icon = ExtResource("5_lfjog")
+popup/item_3/id = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/ColorRect/Menu/Popup/ColorRect/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 225
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="Return" type="Button" parent="CanvasLayer/ColorRect/Menu/Popup/ColorRect/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+text = "Return to Menu"
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect/Menu/Popup/ColorRect"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Settings"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/ColorRect/Menu/Buttons/MarginContainer2/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/Menu/Buttons/MarginContainer3/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/Menu/Buttons/MarginContainer4/Quit" to="." method="_on_quit_pressed"]
+[connection signal="item_selected" from="CanvasLayer/ColorRect/Menu/Popup/ColorRect/HBoxContainer/VBoxContainer/MarginContainer/BallChooser" to="." method="_on_ball_chooser_item_selected"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/Menu/Popup/ColorRect/HBoxContainer/MarginContainer2/Return" to="." method="_on_return_pressed"]
