@@ -1,8 +1,6 @@
-res://Scenes/game.tscn
+res://Scenes/UI/Main Menu.tscn
 res://Scripts/Ball.gd
 res://Scripts/Paddle.gd
-res://Scenes/UI/UI.tscn
-res://Scenes/UI/Main Menu.tscn
-res://Scripts/level.gd
-res://Scripts/Main Menu.gd
 res://Globals/globals.gd
+res://Scenes/game.tscn
+res://Scenes/UI/UI.tscn

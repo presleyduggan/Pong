@@ -6,7 +6,7 @@ var current_scene = null
 var gameLevel = "res://Scenes/game.tscn"
 var mainMenu = "res://Scenes/UI/Main Menu.tscn"
 var gameBall = "Ball"
-var balls = ["Ball", "Koda", "Yoshi", "Shadow"]
+var balls = ["Ball", "Koda", "Yoshi", "Shadow", "Mia"]
 
 func _ready():
 	var root = get_tree().root
